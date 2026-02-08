@@ -1,7 +1,7 @@
 # ML Project - Antigravity Rules
 
 ## Project Overview
-This project performs exploratory data analysis and builds an XGBoost model using scikit-learn datasets.
+This project performs exploratory data analysis and builds an XGBoost classification model on the Wine dataset from scikit-learn.
 
 ## Coding Standards
 
