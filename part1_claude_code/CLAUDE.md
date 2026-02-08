@@ -1,7 +1,7 @@
 # California Housing ML Project
 
 ## Project Overview
-This project performs exploratory data analysis and builds an XGBoost regression model on the California Housing dataset from scikit-learn. The goal is to predict median house values.
+This project performs exploratory data analysis and builds an XGBoost classification model on the Wine dataset from scikit-learn. The goal is to classify wines into one of three classes.
 
 ## Coding Standards
 

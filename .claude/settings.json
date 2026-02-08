@@ -1,8 +1,10 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(gh api:*)"
-    ]
+  "_comments": {
+    "PostToolUse:Write|Edit": "Fires after Claude writes or edits a file.",
+    "PostToolUse:command": "Runs scripts/check_python.sh after writing or editting. This script runs ruff and py_compile to enforce style and catch syntax errors.",
+    "PostToolUse:prompt": "After writing or editting, asks the model whether a test file should be created. And if yes, it creates a test file.",
+    "PreToolUse:Bash": "Fires before Claude executes bash command to block dangerous commands.",
+    "PreToolUse:command": "Runs scripts/block_force_push.sh to prevent git push --force and protect git history."
   },
   "hooks": {
     "PostToolUse": [
@@ -17,7 +19,7 @@
           },
           {
             "type": "prompt",
-            "prompt": "If the file you just wrote or edited is a .py file (not a test file), check if a corresponding test file exists in a tests/ directory. If no test file exists, create one with pytest unit tests covering the public functions. Name it test_<filename>.py in the tests/ directory. Skip this for __init__.py files and files that are themselves test files."
+            "prompt": "A Python file was written or updated. Decide whether a pytest test file is needed. If needed, create a test file covering the main public functions."
           }
         ]
       }
